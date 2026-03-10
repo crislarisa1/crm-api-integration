@@ -52,12 +52,4 @@ Essa lógica permite selecionar apenas os registros elegíveis para estratégias
 
 O fluxo de integração analisado no trabalho segue a seguinte lógica:
 
-Shopify (GraphQL API)
-        ↓
-Python Script (Cloud Function)
-        ↓
-Apache Kafka (event streaming)
-        ↓
-Google BigQuery (processamento e análise)
-        ↓
-Salesforce Marketing Cloud (ativação de CRM)
+Shopify (GraphQL API) > Python Script (Cloud Function) > Apache Kafka (event streaming) > Google BigQuery (processamento e análise) > Salesforce Marketing Cloud (ativação de CRM)
