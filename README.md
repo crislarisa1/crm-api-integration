@@ -2,7 +2,7 @@
 
 ## Repositório do Trabalho de Conclusão de Curso
 
-Este repositório contém OS códigos utilizados no Trabalho de Conclusão de Curso do MBA em Engenharia de Software da USP/ESALQ.
+Este repositório contém os códigos utilizados no Trabalho de Conclusão de Curso do MBA em Engenharia de Software da USP/ESALQ.
 
 O trabalho analisa uma arquitetura de integração baseada em APIs para conectar plataformas de e-commerce, processamento em nuvem e sistemas de Customer Relationship Management (CRM), com foco na recuperação de carrinhos abandonados e na otimização financeira das operações digitais.
 
@@ -21,7 +21,7 @@ Os scripts aqui disponibilizados ilustram como ocorre a coleta de dados via API,
 
 ## Estrutura do repositório
 
-O repositório contém três arquivos principais:
+O repositório contém **quatro arquivos principais**:
 
 ### main.py
 
@@ -47,9 +47,25 @@ A regra considera:
 
 Essa lógica permite selecionar apenas os registros elegíveis para estratégias de recuperação de carrinho no CRM.
 
+### api_salesforce.py
+
+Script Python responsável por demonstrar a integração com a **API REST do Salesforce Marketing Cloud**.
+
+Este código exemplifica como os dados processados no ambiente analítico podem ser enviados para uma **Data Extension** no Marketing Cloud utilizando requisições HTTP autenticadas.
+
+O script realiza o envio de registros de carrinho abandonado contendo informações como:
+
+- identificador do cliente (SubscriberKey)
+- identificador do checkout
+- email do cliente
+- data de criação do carrinho
+- momento de classificação do abandono
+- valor estimado da compra
+
+Esse processo permite que os dados sejam posteriormente utilizados para ativação de jornadas automatizadas de recuperação de carrinho no CRM.
 
 ## Arquitetura simplificada do fluxo de dados
 
 O fluxo de integração analisado no trabalho segue a seguinte lógica:
 
-Shopify (GraphQL API) > Python Script (Cloud Function) > Apache Kafka (event streaming) > Google BigQuery (processamento e análise) > Salesforce Marketing Cloud (ativação de CRM)
+Shopify (GraphQL API) > Python Script (Cloud Function) > Apache Kafka (event streaming) > Google BigQuery (processamento e análise) > Python Script (API REST Salesforce) > Salesforce Marketing Cloud (ativação de CRM)
