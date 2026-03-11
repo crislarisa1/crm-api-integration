@@ -25,7 +25,7 @@ Os scripts aqui disponibilizados ilustram como ocorre a coleta de dados via API,
 
 ## Estrutura do repositório
 
-O repositório contém três arquivos principais:
+O repositório contém quatro arquivos principais:
 
 ### main.py
 
